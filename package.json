@@ -47,5 +47,8 @@
   },
   "dependencies": {
     "log4js": "^6.1.2"
+  },
+  "bugs": {
+    "url": "https://github.com/guo-xinyu/algorithms-in-typescript/issues"
   }
 }
