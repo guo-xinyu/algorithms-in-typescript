@@ -8,7 +8,10 @@
     "plugin:jsdoc/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "eslint:recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "plugins": [
     "jsdoc",
@@ -166,6 +169,9 @@
     "arrow-body-style": 0,
     "no-continue": 0,
     "import/prefer-default-export": 0,
-    "consistent-return": 0
+    "consistent-return": 0,
+
+    "import/order": ["error", {"newlines-between": "always"}],
+    "import/no-absolute-path": "error"
   }
 }
