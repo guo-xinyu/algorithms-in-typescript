@@ -172,6 +172,8 @@
     "consistent-return": 0,
 
     "import/order": ["error", {"newlines-between": "always"}],
-    "import/no-absolute-path": "error"
+    "import/no-absolute-path": "error",
+
+    "sonarjs/prefer-while": 0
   }
 }
