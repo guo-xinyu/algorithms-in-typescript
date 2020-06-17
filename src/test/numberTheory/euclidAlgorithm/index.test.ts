@@ -1,9 +1,11 @@
-import NumberUtils from '../../../utils/NumberUtils';
-import {it} from 'mocha';
 import {PerformanceObserver, performance, PerformanceEntry} from 'perf_hooks';
+import assert from 'assert';
+
+import {it} from 'mocha';
+
+import NumberUtils from '../../../utils/NumberUtils';
 import logger from '../../../loggers/unitTest';
 import euclidAlgorithm from '../../../algorithms/numberTheory/euclidAlgorithm';
-import assert from 'assert';
 
 /**
  * @description

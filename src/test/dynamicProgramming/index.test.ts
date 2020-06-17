@@ -1,9 +1,11 @@
 import assert from 'assert';
-import cutRod, {DynamicProgrammingCode} from '../../algorithms/dynamicProgramming/cutRod';
+import {PerformanceObserver, performance, PerformanceEntry} from 'perf_hooks';
+
 import {it} from 'mocha';
+
+import cutRod, {DynamicProgrammingCode} from '../../algorithms/dynamicProgramming/cutRod';
 import {formatMapOutput} from '../../utils/OutputUtils';
 import logger from '../../loggers/unitTest';
-import {PerformanceObserver, performance, PerformanceEntry} from 'perf_hooks';
 
 const priceMap = new Map<number, number>();
 

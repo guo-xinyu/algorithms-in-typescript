@@ -1,5 +1,7 @@
 import {before, describe} from 'mocha';
+
 import logger from '../loggers/unitTest';
+
 import testDynamicProgramming from './dynamicProgramming/index.test';
 import testEuclidAlgorithm from './numberTheory/euclidAlgorithm/index.test';
 import extendedEuclidAlgorithm from './numberTheory/extendedEuclidAlgorithm/index.test';
