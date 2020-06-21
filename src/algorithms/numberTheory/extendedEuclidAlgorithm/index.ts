@@ -1,27 +1,13 @@
-// /**
-//  * @description 利用擴展歐幾里得算法，求解不定方程ax1+bx2=c的所有解
-//  * @author 郭新雨
-//  * @date 2020-06-12
-//  * @export
-//  * @param {number} a
-//  * @param {number} b
-//  * @param {number} c
-//  * @returns {[number, number][]}
-//  */
-// export default function extendedEuclidAlgorithm(a: number, b: number, c: number): [number, number][] {
-
-// }
-
 /**
- * @description 使用擴展歐幾里得算法，計算兩個數的貝祖係數
+ * @description 使用擴展歐幾里得算法，計算兩個數的貝祖係數，本函數所計算的貝祖係數爲兩組，一組爲第一個數爲正，第二個數爲負，第二組反之
  * @author 郭新雨
  * @date 2020-06-14
  * @export
- * @param {number} numA
- * @param {number} numB
- * @returns {[number,number][]}
+ * @param {number} numA 數A
+ * @param {number} numB 數B
+ * @returns {[number,number][]} 兩組貝祖係數
  */
-export default function extendedEuclidAlgorithm(numA: number, numB: number): [number, number] {
+export default function extendedEuclidAlgorithm(numA: number, numB: number): [number, number][] {
   if (numA <= 0 || !Number.isInteger(numA) || numB <= 0 || !Number.isInteger(numB)) {
     throw 'extendedEuclidAlgorithm的入參須爲正整數';
   }
@@ -46,8 +32,16 @@ export default function extendedEuclidAlgorithm(numA: number, numB: number): [nu
     result = dividend % result;
     dividend = nextDividend;
   }
+  const linear: [number, number][] = [];
   if (numA > numB) {
-    return [s1, t1];
+    linear.push([s1, t1]);
+    return linear;
   }
-  return [t1, s1];
+  linear.push([t1, s1]);
+  if (linear[0][0] < 0) {
+    linear.push([linear[0][0] + numB, linear[0][1] - numA]);
+  } else {
+    linear.push([linear[0][0] - numB, linear[0][1] + numA]);
+  }
+  return linear;
 }

@@ -32,7 +32,8 @@ export default function testEuclidAlgorithm(): void{
     performance.mark('B');
     performance.measure('輾轉相除法所耗時間爲', 'A', 'B');
 
-    assert.ok(NumberUtils.isGcd((result[0] * numA) + (result[1] * numB), numA, numB));
+    assert.ok(result.reduce((prev, cur) => prev && NumberUtils.isGcd((cur[0] * numA) + (cur[1] * numB), numA, numB),
+      NumberUtils.isGcd((result[0][0] * numA) + (result[0][1] * numB), numA, numB)));
     done();
   });
 }
