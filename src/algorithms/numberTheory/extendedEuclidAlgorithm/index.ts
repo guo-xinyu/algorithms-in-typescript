@@ -35,9 +35,10 @@ export default function extendedEuclidAlgorithm(numA: number, numB: number): [nu
   const linear: [number, number][] = [];
   if (numA > numB) {
     linear.push([s1, t1]);
-    return linear;
+    // return linear;
+  } else {
+    linear.push([t1, s1]);
   }
-  linear.push([t1, s1]);
   if (linear[0][0] < 0) {
     linear.push([linear[0][0] + numB, linear[0][1] - numA]);
   } else {
