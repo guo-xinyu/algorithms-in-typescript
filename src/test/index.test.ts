@@ -5,6 +5,7 @@ import logger from '../loggers/unitTest';
 import testDynamicProgramming from './dynamicProgramming/index.test';
 import testEuclidAlgorithm from './numberTheory/euclidAlgorithm/index.test';
 import extendedEuclidAlgorithm from './numberTheory/extendedEuclidAlgorithm/index.test';
+import testRsaAlgorithm from './cryptosystem/rsa/index.test';
 
 before(function() {
   logger.warn('**********************************************************************************');
@@ -16,3 +17,4 @@ before(function() {
 describe('測試動態規劃', testDynamicProgramming);
 describe('測試輾轉相除法', testEuclidAlgorithm);
 describe('測試擴展歐幾裡得算法', extendedEuclidAlgorithm);
+describe('測試RSA', testRsaAlgorithm);
