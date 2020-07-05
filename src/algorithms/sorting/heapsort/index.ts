@@ -74,7 +74,7 @@ function maxHeapify(arr: number[], i: number): number[] {
     largest = r;
   }
   if (largest !== i) {
-    result = ArrayUtils.exchange(result, i, largest);
+    result = ArrayUtils.exchange<number>(result, i, largest);
     result = maxHeapify(result, largest);
   }
   return result;

@@ -26,10 +26,10 @@ function partitiion(arr: number[], start: number, end: number): PartitionResult 
   let i = start - 1;
   for (let j = start; j <= end - 1; ++j) {
     if (result[j] <= x) {
-      result = ArrayUtils.exchange(result, ++i, j);
+      result = ArrayUtils.exchange<number>(result, ++i, j);
     }
   }
-  result = ArrayUtils.exchange(result, ++i, end);
+  result = ArrayUtils.exchange<number>(result, ++i, end);
   return {
     partition: i,
     arrResult: arr

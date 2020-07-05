@@ -6,7 +6,7 @@
  * @class ArrayUtils
  */
 export default class ArrayUtils {
-  public static exchange(arr: number[], a: number, b: number): number[] {
+  public static exchange<T>(arr: T[], a: number, b: number): T[] {
     if (a <= -1 || b <= -1 || a >= arr.length || b >= arr.length) {
       return arr;
     }
