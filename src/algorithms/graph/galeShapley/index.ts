@@ -167,7 +167,7 @@ Matching {
     result = girlChooseBoy(females, maleChooseFemale);
     newBoysCandidates = boyModifyCandidate(newBoysCandidates, result);
     if (choosingIsStable(maleChooseFemale)) {
-      return Object.keys(result).map(key => [key, Reflect.get(result, key) as PersonId || '']);
+      return Object.keys(result).map(key => [Reflect.get(result, key) as PersonId || '', key]);
     }
   }
 }
