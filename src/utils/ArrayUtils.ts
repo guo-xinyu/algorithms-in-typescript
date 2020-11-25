@@ -1,3 +1,5 @@
+import NumberUtils from './NumberUtils';
+
 /**
  * @description
  * @author 郭新雨
@@ -14,5 +16,9 @@ export default class ArrayUtils {
     arr[a] = arr[b];
     arr[b] = temp;
     return arr;
+  }
+  public static randomElement<T>(arr: T[]): T {
+    const randomIndex = NumberUtils.randomInteger(0, arr.length - 1);
+    return arr[randomIndex];
   }
 }
