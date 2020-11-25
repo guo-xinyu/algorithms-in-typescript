@@ -62,6 +62,8 @@
         }
       }
     }],
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "import/no-unresolved": 0,
     "global-require": 0,
     "no-unused-expressions": 0,
@@ -151,9 +153,9 @@
     "no-undef": "error",
     "no-global-assign": "error",
     "no-implicit-globals": "error",
-    "no-use-before-define": "error",
+    "no-use-before-define": "off",
     "init-declarations": "error",
-    "no-shadow": "error",
+    "no-shadow": "off",
     "no-shadow-restricted-names": "error",
     "no-unreachable": "error",
     "no-dupe-keys": "error",
