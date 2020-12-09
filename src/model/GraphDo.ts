@@ -1,10 +1,6 @@
-// export type Candidates<T = string> = Record<string, T[]>;
-
 export type Matching = [PersonId, PersonId][];
 
 export type PersonId = string;
-
-// export type Gender = 'Female' | 'Male';
 
 /**
  * @description 性别
@@ -29,4 +25,29 @@ export interface MatingPerson {
   age: number;
   gender: Gender;
   lovingRank: PersonId[];
+}
+
+/**
+ * @description 帶權重的邊
+ * @author 郭新雨
+ * @date 2020-07-24
+ * @export
+ * @interface WeightedEdge
+ */
+export interface WeightedEdge {
+  v1: string;
+  v2: string;
+  weight: number;
+}
+
+/**
+ * @description 連通加權圖
+ * @author 郭新雨
+ * @date 2020-07-24
+ * @export
+ * @interface ConnectedWeightedGraph
+ */
+export interface ConnectedWeightedGraph {
+  vertices: Set<string>;
+  weightedEdges: Set<WeightedEdge>;
 }
