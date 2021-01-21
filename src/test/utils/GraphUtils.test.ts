@@ -1,4 +1,5 @@
 import {it} from 'mocha';
+import inspect from 'object-inspect';
 
 import {ConnectedWeightedGraph} from '../../model/GraphDo';
 import ArrayUtils from '../../utils/ArrayUtils';
@@ -61,29 +62,29 @@ export default function testGraphUtils(): void {
   const bGraph = createBGraph();
   // const twoGraph = createTwoGraph();
 
-  it(`${JSON.stringify([aGraph, bGraph])}兩個圖的頂點相同嗎？\n${
-    JSON.stringify(GraphUtils.verticesEuqual(aGraph, bGraph))}\n`, (done) => {
+  it(`${inspect([aGraph, bGraph], {indent: 2})}兩個圖的頂點相同嗎？\n${
+    String(GraphUtils.verticesEuqual(aGraph, bGraph))}\n`, (done) => {
     done();
   });
 
   const vertex1 = ArrayUtils.randomElement(Array.from(aGraph.vertices));
   const vertex2 = ArrayUtils.randomElement(Array.from(aGraph.vertices));
 
-  it(`${JSON.stringify(aGraph)}中的節點${vertex1}和節點${vertex2}連通嗎？\n${
-    JSON.stringify(GraphUtils.dfsTwoVertexConnected(vertex1, vertex2, aGraph))}\n`, (done) => {
+  it(`${inspect(aGraph, {indent: 2})}中的節點${vertex1}和節點${vertex2}連通嗎？\n${
+    String(GraphUtils.dfsTwoVertexConnected(vertex1, vertex2, aGraph))}\n`, (done) => {
     done();
   });
 
-  it(`圖${JSON.stringify(aGraph)}是否連通\n${
-    JSON.stringify(GraphUtils.isConnected(aGraph))}\n`, (done) => {
+  it(`圖${inspect(aGraph, {indent: 2})}是否連通\n${
+    String(GraphUtils.isConnected(aGraph))}\n`, (done) => {
     done();
   });
 
   const randomCreatedTree = GraphUtils.randomGraph(5, GraphType.tree);
   it(`隨機生成了一個圖：\n${
-    JSON.stringify(Array.from(randomCreatedTree.vertices))
+    inspect(randomCreatedTree.vertices, {indent: 2})
   }\n${
-    JSON.stringify(Array.from(randomCreatedTree.weightedEdges))
+    inspect(randomCreatedTree.weightedEdges, {indent: 2})
   }`, (done) => {
     done();
   });
