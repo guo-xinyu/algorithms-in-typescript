@@ -8,6 +8,10 @@ import extendedEuclidAlgorithm from './numberTheory/extendedEuclidAlgorithm/inde
 import testRsaAlgorithm from './cryptosystem/rsa/index.test';
 import testGaleShapley from './graph/galeShapley/index.test';
 import testRandomize from './sorting/randomize/index.test';
+import testArrayUtils from './utils/ArrayUtils.test';
+import testGraphUtils from './utils/GraphUtils.test';
+import testKruskal from './graph/kruskal/index.test';
+import testSetUtils from './utils/SetUtils.test';
 
 before(function() {
   logger.warn('**********************************************************************************');
@@ -22,3 +26,7 @@ describe('測試擴展歐幾裡得算法', extendedEuclidAlgorithm);
 describe('測試RSA', testRsaAlgorithm);
 describe('蓋爾——沙普利算法', testGaleShapley);
 describe('測試隨機數組算法', testRandomize);
+describe('測試ArrayUtils', testArrayUtils);
+describe('測試GraphUtils', testGraphUtils);
+describe('測試SetUtils', testSetUtils);
+describe('測試Kruskal最小生成樹算法', testKruskal);
