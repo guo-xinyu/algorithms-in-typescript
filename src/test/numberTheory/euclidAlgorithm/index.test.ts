@@ -13,7 +13,7 @@ import euclidAlgorithm from '../../../algorithms/numberTheory/euclidAlgorithm';
  * @date 2020-05-20
  * @export
  */
-export default function testEuclidAlgorithm(): void{
+export default function testEuclidAlgorithm(): void {
   const range = [1, 10000];
   const numA = NumberUtils.randomInteger(range[0], range[1]);
   const numB = NumberUtils.randomInteger(range[0], range[1]);

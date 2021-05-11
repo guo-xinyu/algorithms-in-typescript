@@ -13,19 +13,36 @@ import GraphUtils, {GraphType} from '../../utils/GraphUtils';
  */
 function createAGraph(): ConnectedWeightedGraph {
   return {
-    vertices: new Set(['a', 'b', 'c', 'd']),
+    vertices: new Set(['A', 'B', 'C', 'D', 'E', 'F', 'G']),
     weightedEdges: new Set([{
-      v1: 'a',
-      v2: 'b',
+      v1: 'A',
+      v2: 'B',
+      weight: 8
+    },
+    {
+      v1: 'C',
+      v2: 'D',
+      weight: 5
+    },
+    {
+      v1: 'A',
+      v2: 'E',
+      weight: 5
+    },
+    {
+      v1: 'D',
+      v2: 'E',
+      weight: 2
+    },
+    {
+      v1: 'D',
+      v2: 'F',
       weight: 1
-    }, {
-      v1: 'a',
-      v2: 'c',
-      weight: 1
-    }, {
-      v1: 'b',
-      v2: 'd',
-      weight: 1
+    },
+    {
+      v1: 'E',
+      v2: 'G',
+      weight: 9
     }])
   };
 }
@@ -38,14 +55,14 @@ function createAGraph(): ConnectedWeightedGraph {
  */
 function createBGraph(): ConnectedWeightedGraph {
   return {
-    vertices: new Set(['a', 'b', 'c']),
+    vertices: new Set(['A', 'B', 'C']),
     weightedEdges: new Set([{
-      v1: 'a',
-      v2: 'b',
+      v1: 'A',
+      v2: 'B',
       weight: 1
     }, {
-      v1: 'b',
-      v2: 'c',
+      v1: 'B',
+      v2: 'C',
       weight: 2
     }])
   };
@@ -71,7 +88,7 @@ export default function testGraphUtils(): void {
   const vertex2 = ArrayUtils.randomElement(Array.from(aGraph.vertices));
 
   it(`${inspect(aGraph, {indent: 2})}中的節點${vertex1}和節點${vertex2}連通嗎？\n${
-    String(GraphUtils.dfsTwoVertexConnected(vertex1, vertex2, aGraph))}\n`, (done) => {
+    String(GraphUtils.dfsTwoVertexConnected(vertex1, vertex2, aGraph.weightedEdges))}\n`, (done) => {
     done();
   });
 
