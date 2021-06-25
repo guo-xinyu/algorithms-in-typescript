@@ -11,6 +11,7 @@ import testRandomize from './sorting/randomize/index.test';
 import testArrayUtils from './utils/ArrayUtils.test';
 import testGraphUtils from './utils/GraphUtils.test';
 import testKruskal from './graph/kruskal/index.test';
+import testPrim from './graph/prim/index.test';
 import testSetUtils from './utils/SetUtils.test';
 
 before(function() {
@@ -30,3 +31,4 @@ describe('測試ArrayUtils', testArrayUtils);
 describe('測試GraphUtils', testGraphUtils);
 describe('測試SetUtils', testSetUtils);
 describe('測試Kruskal最小生成樹算法', testKruskal);
+describe('測試普林最小生成樹算法', testPrim);

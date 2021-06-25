@@ -1,6 +1,10 @@
 import Chance from 'chance';
 
-import {ConnectedWeightedGraph, WeightedEdge} from '../model/GraphDo';
+import {
+  ConnectedWeightedGraph,
+  // Tree,
+  WeightedEdge
+} from '../model/GraphDo';
 
 import ArrayUtils from './ArrayUtils';
 import NumberUtils from './NumberUtils';
@@ -50,8 +54,8 @@ export default class GraphUtils {
     if (aGraph.vertices.size !== bGraph.vertices.size) {
       return false;
     }
-    const result = Array.from(aGraph.vertices).find(ele => !bGraph.vertices.has(ele));
-    if (typeof result === 'string') {
+    const result = Array.from(aGraph.vertices).findIndex(ele => !bGraph.vertices.has(ele));
+    if (result >= 0) {
       return false;
     }
     return true;
@@ -194,4 +198,52 @@ export default class GraphUtils {
     }
     return true;
   }
+
+  // /**
+  //  * @description 轉换圖成樹
+  //  * @author 郭新雨
+  //  * @date 2021-05-13
+  //  * @static
+  //  * @param {ConnectedWeightedGraph} graph 圖
+  //  * @param {string} root 根節點
+  //  * @returns {Tree} 樹
+  //  * @memberof GraphUtils
+  //  */
+  // public static formateGraphToTree(graph: ConnectedWeightedGraph, root: string): Tree {
+  //   const tree: Tree = {
+  //     node: root,
+  //     parentToNodeWeight: 0,
+  //     children: []
+  //   };
+  //   const edgeArr = Array.from(graph.weightedEdges);
+  //   // while (true) {
+  //   const childrenEdge = edgeArr.filter(ele => ele.v1 === root || ele.v2 === root);
+  //   const extractGraph = {
+  //     vertices: vertices,
+  //     weightedEdges: edgeArr.filter(ele => ele.v1 !== root && ele.v2 !== root)
+  //   };
+  //   for (let child of childrenEdge) {
+  //     let edges =
+  //     GraphUtils.formateGraphToTree(graph);
+
+  //   }
+  //   // if()
+  //   // }
+  //   return tree;
+  // }
+
+  // private static formateGraphToTreeVisitor(graph:ConnectedWeightedGraph,root:string,):
+
+  // /**
+  //  * @description 深度優先遍歷樹
+  //  * @author 郭新雨
+  //  * @date 2021-05-12
+  //  * @static
+  //  * @param {ConnectedWeightedGraph} graph
+  //  * @param {string} root 根節點
+  //  * @param {(current: string) => boolean} [callback] 回調函數，返回值爲否的話則終止遍歷
+  //  * @returns {string[]} 返回按遍歷順序排列的節點
+  //  * @memberof GraphUtils
+  //  */
+  // static
 }

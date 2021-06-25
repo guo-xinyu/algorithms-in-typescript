@@ -51,3 +51,16 @@ export interface ConnectedWeightedGraph {
   vertices: Set<string>;
   weightedEdges: Set<WeightedEdge>;
 }
+
+// /**
+//  * @description
+//  * @author 郭新雨
+//  * @date 2021-05-13
+//  * @export
+//  * @interface Tree
+//  */
+// export interface Tree {
+//   node: string;
+//   parentToNodeWeight: number;
+//   children?: Tree[];
+// }
