@@ -4,7 +4,6 @@ import assert from 'assert';
 import {it} from 'mocha';
 import inspect from 'object-inspect';
 
-// import NumberUtils from '../../../utils/NumberUtils';
 import logger from '../../../loggers/unitTest';
 // import euclidAlgorithm from '../../../algorithms/numberTheory/euclidAlgorithm';
 // import {ConnectedWeightedGraph} from '../../../model/GraphDo';
