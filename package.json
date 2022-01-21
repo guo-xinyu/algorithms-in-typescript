@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "chance": "^1.1.7",
-    "log4js": "^6.3.0",
+    "log4js": "^6.4.0",
     "object-inspect": "^1.10.3"
   },
   "bugs": {
